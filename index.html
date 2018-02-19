@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Formulaire Joueur</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Formulaire</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-  </div>
+  <section class="main">
+    <form id="formContact" onsubmit="formContact_result(); return false;">
+      <fieldset id="mainFieldset">
+        <div class="formContact">
+          <form action="">
+          <fieldset>
+          <legend>Informations Personnelles</legend>
+          <label for="formContactName">Prénom*</label>
+          <input id="formContactName" type="text" name="text"  placeholder="Inserez votre prénom ici" required>
+          <label for="formContactLastName">Nom*</label>
+          <input id="formContactLastName" type="text" name="text" placeholder="Inserez votre nom ici" required>
+          <div><label for="formContactBirthDate">Date de naissance*</label>
+            <input type="date" name="text" id="formContactBirthDate" required></div>
+          
+        </fieldset>
+      </form>
+        </div>
+        <div>
+            <label for="formPlayerNumber">Numéro du joueur (compris entre 9 et 99):</label>
+            <input id="formPlayerNumber" type="number" min="9" max="99" value="">
+        
+        </div>
+      
+        <form>
+          <fieldset>
+            <legend>Liste des postes auquels je peux évoluer</legend>
+            
+              <div class="row col-12">
+
+                <input class="formAutoEval" type="radio">
+                <label class="col-12"for="formAutoEval">Défenseur</label><br>
+                <input class="formAutoEval" type="radio">
+                <label for="formAutoEval">Milieu</label><br>
+                <input class="formAutoEval" type="radio">
+                <label for="formAutoEval">Attaquant</label><br>
+                <input type="button" value="Obtenir des informations supplementaires sur les posts">
+              </div>
+
+            </div>
+
+          </fieldset>
+        </form>
+        
+       
+          <input id="formContact__submit" type="submit" value="Envoyer">
+          <label>* = Champs obligatoires</label>
+       
+
+      </fieldset>
+    </form>
+  </section>
+  <script type="text/javascript">
+  function goAlert() {
+    alert("Je suis en alerte !");
+  }
+
+  function formContact_result() {
+    var elem = document.getElementById("formContact__text");
+    document.getElementById("formContact__result").innerHTML = elem.value;
+    document.getElementById("formContact__text").value = "";
+  }
+
+  function changeColor() {
+    document.body.style.backgroundColor = "#BADA55";
+    console.log(document.body.style);
+  }
+
+  function resetColor() {
+    document.body.style.backgroundColor = "#FFFFFF";
+  }
+  </script>
 </body>
 </html>
